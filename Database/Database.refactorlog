@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="047af497-1121-416e-a05c-2772d11bb312" ChangeDateTime="12/02/2021 23:16:40">
+    <Property Name="ElementName" Value="[dbo].[WorkItemUntrackedData].[CustomData]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[WorkItemUntrackedData]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomFields" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="342c814d-f39e-4e6e-815c-952598ab7634" ChangeDateTime="12/02/2021 23:17:05">
+    <Property Name="ElementName" Value="[history].[WorkItems].[CustomData]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[history].[WorkItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomFields" />
+  </Operation>
+</Operations>

@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>NuxtTemplate.Web</AssemblyName>
+    <RootNamespace>NuxtTemplate.Web</RootNamespace>
+    <StartupObject>NuxtTemplate.Web.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\.nojekyll" />
+    <Content Remove="wwwroot\200.html" />
+    <Content Remove="wwwroot\favicon.ico" />
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\inspire\index.html" />
+    <Content Remove="wwwroot\README.md" />
+    <Content Remove="wwwroot\uiConfig.Development.js" />
+    <Content Remove="wwwroot\uiConfig.js" />
+    <Content Remove="wwwroot\uiConfig.Production.js" />
+    <Content Remove="wwwroot\uiConfig.Staging.js" />
+    <Content Remove="wwwroot\v.png" />
+    <Content Remove="wwwroot\vuetify-logo.svg" />
+    <Content Remove="wwwroot\_nuxt\0464106.js" />
+    <Content Remove="wwwroot\_nuxt\14569cd.js" />
+    <Content Remove="wwwroot\_nuxt\1a12cc2.js" />
+    <Content Remove="wwwroot\_nuxt\22ec024.js" />
+    <Content Remove="wwwroot\_nuxt\2b7e6a6.js" />
+    <Content Remove="wwwroot\_nuxt\751e5dc.js" />
+    <Content Remove="wwwroot\_nuxt\7683762.js" />
+    <Content Remove="wwwroot\_nuxt\8156746.js" />
+    <Content Remove="wwwroot\_nuxt\c6850bb.js" />
+    <Content Remove="wwwroot\_nuxt\e029bb1.js" />
+    <Content Remove="wwwroot\_nuxt\LICENSES" />
+    <Content Remove="wwwroot\_nuxt\static\1638645011\inspire\payload.js" />
+    <Content Remove="wwwroot\_nuxt\static\1638645011\inspire\state.js" />
+    <Content Remove="wwwroot\_nuxt\static\1638645011\manifest.js" />
+    <Content Remove="wwwroot\_nuxt\static\1638645011\payload.js" />
+    <Content Remove="wwwroot\_nuxt\static\1638645011\state.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\.nojekyll" />
+    <None Include="wwwroot\200.html" />
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\inspire\index.html" />
+    <None Include="wwwroot\README.md" />
+    <None Include="wwwroot\uiConfig.Development.js" />
+    <None Include="wwwroot\uiConfig.js" />
+    <None Include="wwwroot\uiConfig.Production.js" />
+    <None Include="wwwroot\uiConfig.Staging.js" />
+    <None Include="wwwroot\v.png" />
+    <None Include="wwwroot\vuetify-logo.svg" />
+    <None Include="wwwroot\_nuxt\0464106.js" />
+    <None Include="wwwroot\_nuxt\14569cd.js" />
+    <None Include="wwwroot\_nuxt\1a12cc2.js" />
+    <None Include="wwwroot\_nuxt\22ec024.js" />
+    <None Include="wwwroot\_nuxt\2b7e6a6.js" />
+    <None Include="wwwroot\_nuxt\751e5dc.js" />
+    <None Include="wwwroot\_nuxt\7683762.js" />
+    <None Include="wwwroot\_nuxt\8156746.js" />
+    <None Include="wwwroot\_nuxt\c6850bb.js" />
+    <None Include="wwwroot\_nuxt\e029bb1.js" />
+    <None Include="wwwroot\_nuxt\LICENSES" />
+    <None Include="wwwroot\_nuxt\static\1638645011\inspire\payload.js" />
+    <None Include="wwwroot\_nuxt\static\1638645011\inspire\state.js" />
+    <None Include="wwwroot\_nuxt\static\1638645011\manifest.js" />
+    <None Include="wwwroot\_nuxt\static\1638645011\payload.js" />
+    <None Include="wwwroot\_nuxt\static\1638645011\state.js" />
+  </ItemGroup>
+
+
+</Project>

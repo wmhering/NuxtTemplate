@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="npm run generate&#xD;&#xA;if exist &quot;$(SolutionDir)Web.API\wwwroot&quot; rd /s /q &quot;$(SolutionDir)Web.API\wwwroot&quot;&#xD;&#xA;md &quot;$(SolutionDir)Web.API\wwwroot&quot;&#xD;&#xA;robocopy &quot;$(ProjectDir)dist&quot; &quot;$(SolutionDir)Web.API\wwwroot&quot; /E /COPY:D" />
+  </Target>
+
+  <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+  </ItemGroup>
+
+</Project>
