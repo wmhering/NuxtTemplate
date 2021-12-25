@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxttest',
-    title: 'nuxttest',
+    titleTemplate: '%s - NuxtTemplate',
+    title: 'NuxtTemplate',
     htmlAttrs: {
       lang: 'en'
     },
@@ -36,13 +36,20 @@ export default {
             cookie: {
                 cookie: {
                     name: "Cuyahoga-Auth",
-                }
+                },
                 endpoints: {
-                    csrf: { url: '' },
-                    login: {}
+                    // csrf: { url: '', method: 'get' },
+                    login: { url: '/api/account/login', method: 'post' },
+                    logout: { url: '/api/account/logout', method: 'post' },
+                    user: { url: '/api/account/user', method: 'get' },
                 }
             },
         },
+        redirect: {
+            login: '/login',
+            logout: '/login',
+            home: '/userInfo',
+        }
     },
 
   // Auto import components: https://go.nuxtjs.dev/config-components

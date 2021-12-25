@@ -58,11 +58,14 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
-    <Folder Include="history" />
-    <Folder Include="history\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="history.sql" />
+    <Build Include="dbo\Tables\Employees.sql" />
+    <Build Include="dbo\Tables\Employees_History.sql" />
+    <Build Include="dbo\Tables\Activities.sql" />
+    <Build Include="dbo\Tables\WorkLogEntries.sql" />
+    <Build Include="dbo\Tables\WorkLogEntries_History.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database.refactorlog" />

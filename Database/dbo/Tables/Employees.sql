@@ -1,0 +1,18 @@
+﻿CREATE TABLE dbo.Employees (
+  EmployeeKey INT IDENTITY(1,1) NOT NULL,
+  HistoryStartTime DATETIME2(3) GENERATED ALWAYS AS ROW START NOT NULL,
+  HistoryEndTime DATETIME2(3) GENERATED ALWAYS AS ROW END NOT NULL,
+  Change_EmployeeKey INT NULL,
+  SamAccountName VARCHAR(50) NOT NULL,
+  UserPrincipalName VARCHAR(50) NOT NULL,
+  Email VARCHAR(50) NULL,
+  LastName VARCHAR(50) NULL,
+  FirstName VARCHAR(50) NULL,
+  IsSupervisor BIT NOT NULL,
+  IsDirector BIT NOT NULL,
+  IsProvisional BIT NULL,
+  PERIOD FOR SYSTEM_TIME (HistoryStartTime, HistoryEndTime),
+  CONSTRAINT Employees_PK
+   PRIMARY KEY (EmployeeKey)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.Employees_History, DATA_CONSISTENCY_CHECK = ON))

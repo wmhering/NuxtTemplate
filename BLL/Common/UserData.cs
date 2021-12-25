@@ -8,6 +8,7 @@ namespace NuxtTemplate.BLL.Common
     {
         public UserData(ClaimsPrincipal principal)
         {
+            Principal = principal;
             var permissions = ImmutableList.CreateBuilder<string>();
             IsAuthenticated = principal?.Identity.IsAuthenticated ?? false;
             if (IsAuthenticated)
@@ -30,6 +31,8 @@ namespace NuxtTemplate.BLL.Common
         public string Email { get; } = "";
         public string LastName { get; } = "";
         public IList<string> Permissions { get; }
+
+        public IClaimsPrincipal Principal { get; }
         public int EmployeeKey { get; } = 0;
     }
 }

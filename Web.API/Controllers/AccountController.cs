@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,21 +12,22 @@ using NuxtTemplate.BLL.Common.Results;
 namespace NuxtTemplate.Web.Controllers
 {
     [ApiController]
-    [Route("Account")]
-    public class AccountController : Controller
+    [Route("api/[controller]")]
+    public class AccountController : ControllerBase
     {
         [HttpGet("User")]
-        [Authorize]
-        public IActionResult Data()
+        //[Authorize]
+        public async Task<IActionResult> Data()
         {
             var result = new DataResult<UserData>();
             result.Data = new UserData(User);
-            result.Messages.Add(new ResultMessage { Status = ResultStatus.Information, Message = User.Identity.IsAuthenticated ? "Everything is good!" : "This is bad" });
+            if (!result.Data.IsAuthenticated)
+                result.Error("User is not authenticated");
             return Ok(result);
         }
 
         [HttpPost("Login")]
-        public IActionResult Login([FromBody]LoginData loginData)
+        public async Task<IActionResult> Login([FromBody]LoginData loginData)
         {
             var result = new DataResult<UserData>();
             if (ModelState.IsValid)
@@ -46,7 +48,7 @@ namespace NuxtTemplate.Web.Controllers
 
         [HttpPost("Logout")]
         [Authorize]
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
             SignOut();
             var result = new BLL.Common.Results.EmptyResult();

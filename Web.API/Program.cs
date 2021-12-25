@@ -29,14 +29,12 @@ namespace NuxtTemplate.Web
                         .AddEnvironmentVariables("ASPNETCORE_")
                         .AddCommandLine(args);
                 })
-                .ConfigureLogging(logging =>
+                .ConfigureLogging((context, logging) =>
                 {
                     logging
-                        .AddConfiguration(null)
+                        .AddConfiguration(context.Configuration)
                         .AddConsole()
-                        .AddDebug()
-                        .AddDatabase()
-                        .AddFile();
+                        .AddDebug();
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
